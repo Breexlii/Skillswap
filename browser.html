@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Skills - Skill Swap</title>
+    <link rel="stylesheet" href="css/browser.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">Skill Swap</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browser.html">Browse Skills</a></li>
+            <li><a href="how-it-works.html">How It Works?</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="auth-links">
+            <a href="signup.html" class="highlight">Sign Up</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="search-filter">
+            <input type="text" id="searchInput" placeholder="Search skills..." onkeyup="filterSkills()">
+            <select id="categorySelect" onchange="filterSkills()">
+                <option value="">All Categories</option>
+                <option value="Art">Art</option>
+                <option value="Music">Music</option>
+                <option value="Programming">Programming</option>
+                <option value="Languages">Languages</option>
+                <option value="Cooking">Cooking</option>
+            </select>
+            <select id="sortSelect" onchange="sortPosts()">
+                <option value="default">Sort By</option>
+                <option value="alphabetical">Alphabetical</option>
+                <option value="date">Date</option>
+            </select>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+            <!-- Sample Posts -->
+            <div class="skill-card" data-category="Art" onclick="openPost('Painting Techniques', 'Learn to paint with acrylics. Explore different painting techniques and unleash your creativity!')">
+                <h3>Painting Techniques</h3>
+                <p>Art</p>
+            </div>
+            <div class="skill-card" data-category="Music" onclick="openPost('Guitar Lessons', 'Learn the basics of guitar playing and start strumming your favorite songs!')">
+                <h3>Guitar Lessons</h3>
+                <p>Music</p>
+            </div>
+            <div class="skill-card" data-category="Programming" onclick="openPost('Learn Python', 'Join me to learn the basics of Python programming!')">
+                <h3>Learn Python</h3>
+                <p>Programming</p>
+            </div>
+            <div class="skill-card" data-category="Languages" onclick="openPost('Spanish Lessons', 'Practice your Spanish speaking skills with a native speaker!')">
+                <h3>Spanish Lessons</h3>
+                <p>Languages</p>
+            </div>
+            <div class="skill-card" data-category="Cooking" onclick="openPost('Italian Cooking', 'Learn to cook authentic Italian dishes from scratch!')">
+                <h3>Italian Cooking</h3>
+                <p>Cooking</p>
+            </div>
+        </div>
+
+        <!-- Post Details Section (Initially Hidden) -->
+        <div class="post-details" id="postDetails" style="display: none;">
+            <button class="close-btn" onclick="closePost()">X</button>
+            <h2 id="postTitle"></h2>
+            <p id="postContent"></p>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+                <button class="submit-comment" onclick="submitComment()">Post</button>
+                <div id="commentsList"></div>
+            </div>
+            <button class="request-button">Request to Offer</button>
+        </div>
+    </div>
+
+    <!-- Plus Button for Adding New Posts -->
+    <button class="plus-button" onclick="openAddPostForm()">+</button>
+
+    <!-- Add Post Form (Initially Hidden) -->
+    <div class="add-post-form" id="addPostForm" style="display: none;">
+        <button class="close-btn" onclick="closeAddPostForm()">X</button>
+        <h2>Add New Post</h2>
+        <input type="text" id="newSkillTitle" placeholder="Your Skill" required>
+        <input type="text" id="newSkillDescription" placeholder="What you want to learn" required>
+        <button class="post-button" onclick="addNewPost()">Post</button>
+    </div>
+
+    <script src="scripts/browser.js"></script>
+</body>
+</html>
