@@ -99,7 +99,7 @@ html, body {
 .hero {
     width: 100%;  /* Force full width */
     height: 80vh;
-    background: url("imgs/bannr.png") no-repeat center center;
+    background: url("//imgs/bannr.png") no-repeat center center;
     background-size: cover; 
     display: flex;
     flex-direction: column;
