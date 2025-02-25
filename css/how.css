@@ -144,12 +144,21 @@ html, body {
 }
 
 
-/* If you have links or other elements */
-footer .footer-links {
+footer {
+    text-align: center; 
+    padding: 20px; 
+    background-color: #333; 
+    color: white; 
+    position: relative; /* Ensure it stays in place */
+    width: 100%; /* Full width */
+}
+
+.footer-links {
     display: flex; 
     justify-content: center; 
     gap: 15px; 
     flex-wrap: wrap; /* Allow wrapping of links */
+    margin-bottom: 10px; /* Space between links and copyright text */
 }
 
 .footer-links a {
@@ -162,11 +171,23 @@ footer .footer-links {
     text-decoration: underline; /* Add underline on hover for better UX */
 }
 
-/* Additional media query for footer links */
+/* Responsive Design for Footer */
 @media (max-width: 600px) {
+    footer {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+    
+    footer p {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
     .footer-links {
         flex-direction: column; /* Stack links vertically on small screens */
         align-items: center; /* Center align links */
+    }
+
+    .footer-links a {
+        font-size: 0.9rem; /* Adjust font size for links */
     }
 }
 
