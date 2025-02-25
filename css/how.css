@@ -143,32 +143,30 @@ html, body {
     color: #555;
 }
 
-footer {
-    text-align: center; 
-    padding: 22px; 
-    background-color: #333; 
-    color: white; 
-}
-
-
 
 /* If you have links or other elements */
 footer .footer-links {
     display: flex; 
     justify-content: center; 
     gap: 15px; 
+    flex-wrap: wrap; /* Allow wrapping of links */
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-    .steps-container {
-        flex-direction: column;
-        align-items: center;
-    }
+.footer-links a {
+    color: white; /* Ensure links are visible */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Adjust font size */
+}
 
-    .step {
-        width: 90%;
-        margin-bottom: 20px; 
+.footer-links a:hover {
+    text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+/* Additional media query for footer links */
+@media (max-width: 600px) {
+    .footer-links {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center align links */
     }
 }
 
